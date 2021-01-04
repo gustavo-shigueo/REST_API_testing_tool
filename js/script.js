@@ -46,7 +46,7 @@ const formatML = xml => {
     else if (node.match( /^<\w([^>]*[^\/])?>.*$/ )) indent = 1
 
     let padding = ''
-    for (var i = 0; i < pad; i++) padding += '  '
+    for (let i = 0; i < pad; i++) padding += '  '
     formatted += `${padding}${node}\r\n`
     pad += indent
   })
