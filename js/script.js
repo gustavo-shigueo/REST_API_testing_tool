@@ -32,7 +32,9 @@ const displayResponse = response => {
   for (i in elements) document.querySelector(elements[i]).value = response[fields[i]]
 }
 
-const formatXML = xml => {
+const formatML = xml => {
+  xml = xml.replace(/\n*/g, '')
+  console.log(xml)
   let formatted = ''
   const reg = /(>)(<)(\/*)/g
   xml = xml.replace(reg, '$1\r\n$2$3')
@@ -52,6 +54,12 @@ const formatXML = xml => {
   return formatted
 }
 
+const formatData = async (data, format) => {
+  if (format === 'application/json') return JSON.stringify(await data.json(), null, 2)
+  if (format.match(/(application\/xml)|(text\/html)/g)) return formatML(await data.text())
+  return await data.text()
+}
+
 const sendReq = async e => {
   e.preventDefault()
 
@@ -67,12 +75,7 @@ const sendReq = async e => {
     const status = res.status
     const statusText = res.statusText
 
-    let data
-    if (status !== 204) {
-      data = options.headers['Accept'] === 'application/json'
-        ? JSON.stringify(await res.json(), null, 2)
-        : formatXML(await res.text())
-    }
+    const data = status !== 204 ? await formatData(res, headersObj['content-type']) : ''
 
     const response = { status, statusText, data, headers }
     displayResponse(response)
