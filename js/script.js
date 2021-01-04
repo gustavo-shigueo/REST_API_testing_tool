@@ -34,7 +34,6 @@ const displayResponse = response => {
 
 const formatML = ml => {
   ml = ml.replace(/\n*/g, '')
-  console.log(ml)
   let formatted = ''
   const reg = /(>)(<)(\/*)/g
   ml = ml.replace(reg, '$1\r\n$2$3')
