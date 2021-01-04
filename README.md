@@ -21,5 +21,6 @@ app.use((req, res, next) => {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Expose-Headers': '*'
   })
+  next()
 })
 ```
