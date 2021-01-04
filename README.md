@@ -1,7 +1,8 @@
 # http_requests
 ## Test REST APIs
 
-This is a javascript application that uses the browser's Fetch API to send HTTP requests to your API
+This is a javascript application that uses the browser's Fetch API to send HTTP requests to your API.
+It accepts responses in the formats JSON and XML, other formats can be used, but the response will not be indented/formatted accordingly.
 Downloading the code is not necessary, however, to use this application, you must add the following code to your API's root file:
 ```javascript
 // The following code assumes your API uses Express
