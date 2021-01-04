@@ -16,10 +16,10 @@ const app = express()
 
 app.use((req, res, next) => {
   res.set({
-    "Access-Control-Allow-Headers": "*",
-    "Access-Control-Allow-Methods": "*",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Expose-Headers": "*",
+    'Access-Control-Allow-Headers': '*',
+    'Access-Control-Allow-Methods': '*',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Expose-Headers': '*'
   })
 })
 ```
