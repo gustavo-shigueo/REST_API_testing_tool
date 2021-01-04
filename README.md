@@ -5,7 +5,11 @@ This is a javascript application that uses the browser's Fetch API to send HTTP 
 Downloading the code is not necessary, however, to use this application, you must add the following code to your API's root file:
 ```javascript
 // The following code assumes your API uses Express
-// If your API does not use Express, you must find a way to configure your API so that CORS restrictions don't block the requests sent by the application
+/*
+  If your API does not use Express, you must find a way to configure
+  your API so that CORS restrictions don't block the requests
+  sent by the application
+*/
 const express = require('express')
 const app = express()
 
