@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.min.css">
+  <script src="./js/script.js" defer></script>
+  <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+  >
+  <title>Document</title>
+</head>
+<body>
+
+  <section>
+    <h1>Request</h1>
+    <form id="reqForm">
+
+      <div class="flex-container">
+
+        <div class="form-group">
+          <label for="method">Method:</label>
+          <select id="method">
+            <option value="GET" selected>GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="PATCH">PATCH</option>
+            <option value="DELETE">DELETE</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="route">Route:</label>
+          <input type="text" id="route" placeholder="Route">
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="reqHeaders">Headers:</label>
+        <textarea id="reqHeaders"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="reqBody">Body:</label>
+        <textarea id="reqBody"></textarea>
+      </div>
+
+      <button type="submit" id="send" class="submit">Send Request <i class="fas fa-arrow-right"></i></button>
+
+    </form>
+  </section>
+
+  <section>
+
+    <h1>Response</h1>
+    <form id="resForm">
+
+      <div class="flex-container">
+
+        <div class="form-group">
+          <label>Status code:</label>
+          <input type="text" disabled id="resStatusCode">
+        </div>
+
+        <div class="form-group">
+          <label>Status text:</label>
+          <input type="text" disabled id="resStatusText">
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label>Headers:</label>
+        <textarea disabled id="resHeaders"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Body:</label>
+        <textarea disabled id="resBody"></textarea>
+      </div>
+
+    </form>
+
+  </section>
+
+</body>
+</html>
