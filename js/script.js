@@ -32,14 +32,14 @@ const displayResponse = response => {
   for (i in elements) document.querySelector(elements[i]).value = response[fields[i]]
 }
 
-const formatML = xml => {
-  xml = xml.replace(/\n*/g, '')
-  console.log(xml)
+const formatML = ml => {
+  ml = ml.replace(/\n*/g, '')
+  console.log(ml)
   let formatted = ''
   const reg = /(>)(<)(\/*)/g
-  xml = xml.replace(reg, '$1\r\n$2$3')
+  ml = ml.replace(reg, '$1\r\n$2$3')
   let pad = 0
-  xml.split('\r\n').forEach(node => {
+  ml.split('\r\n').forEach(node => {
     let indent = 0
     if (node.match( /.+<\/\w[^>]*>$/ )) indent = 0
     else if (node.match( /^<\/\w/ ) && pad !== 0) pad -= 1
