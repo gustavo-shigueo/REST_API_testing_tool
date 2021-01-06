@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.min.css">
-  <script src="./js/script.js" defer></script>
+  <script src="./js/theme.js" defer></script>
+  <script src="./js/request.js" defer></script>
   <link
     rel="stylesheet"
     href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -13,7 +14,17 @@
   >
   <title>Document</title>
 </head>
-<body>
+<body class="light">
+
+  <header>
+
+    <h2>Theme:</h2>
+    <ul>
+      <li><a href="#" id="light" class="active"><i class="fas fa-sun"></i> Light</a></li>
+      <li><a href="#" id="dark"><i class="fas fa-moon"></i> Dark</a></li>
+    </ul>
+
+  </header>
 
   <section>
     <h1>Request</h1>
@@ -31,10 +42,10 @@
             <option value="DELETE">DELETE</option>
           </select>
         </div>
-  
+
         <div class="form-group">
-          <label for="route">Route:</label>
-          <input type="text" id="route" placeholder="Route">
+          <label for="host">Host:</label>
+          <input type="text" id="host" value="http://localhost:3000/" autocomplete="d">
         </div>
 
       </div>
@@ -49,7 +60,7 @@
         <textarea id="reqBody"></textarea>
       </div>
 
-      <button type="submit" id="send" class="submit">Send Request <i class="fas fa-arrow-right"></i></button>
+      <button type="submit" id="send" class="submit" id="send">Send Request <i class="fas fa-arrow-right"></i></button>
 
     </form>
   </section>
