@@ -2,7 +2,14 @@
 ## Test REST APIs
 
 This is a javascript application that uses the browser's Fetch API to send HTTP requests to your API.
-It accepts responses in the formats JSON, HTML and XML, other formats can be used, but the response will not be indented/formatted accordingly.
+Request data must be sent as JSON!
+The responses can be in the formats JSON, HTML and XML, other formats can be used, but the response will not be indented/formatted accordingly. An empty header will generate a JSON response.
+To choose a format other than JSON, set the request header as follows:
+```json
+{
+  "Accept": "response format here (e.g.: text/html)"
+}
+```
 
 The request is sent via HTTP to the provided URL. The following URL formats are accepted:
 * http://host:port/route
