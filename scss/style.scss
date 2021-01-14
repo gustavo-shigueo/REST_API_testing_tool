@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
 * {
   padding: 0;
   margin: 0;
@@ -9,6 +7,7 @@
   box-sizing: border-box;
   font-size: 16px;
   font-family: 'Nunito', sans-serif;
+  font-display: swap;
   --shadow-color: rgba(0,0,0, .4);
   --transition: background-color 300ms ease-out, color 500ms ease-in;
 }
@@ -30,6 +29,8 @@
   --border-input: 1px solid #151515;
   --border-input-disabled: 1px solid #202020;
 }
+
+
 
 body {
   display: flex;
@@ -60,8 +61,13 @@ header {
 
     li {
       height: 100%;
+
       a{
         height: 100%;
+
+        .theme-icons {
+          margin-right: 5px;
+        }
       }
     }
 
@@ -73,11 +79,6 @@ header {
       display: flex;
       align-items: center;
       position: relative;
-
-      i {
-        margin-right: 5px;
-        pointer-events: none;
-      }
     }
 
     li .active::after {
@@ -115,6 +116,12 @@ a {
   text-decoration: none;
 }
 
+svg {
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
 section {
   width: calc(50vw - 80px);
   margin: 0 1rem;
@@ -131,10 +138,6 @@ section {
     flex-grow: 1;
     max-width: calc(50% - 15px);
   }
-}
-
-.flex-container.three-children .form-group {
-  max-width: calc(100% / 3 - 15px);
 }
 
 .form-group {
@@ -174,7 +177,9 @@ section {
 
 .submit {
   padding: 7px 1rem;
-  background-color: #0095ff;
+  display: flex;
+  align-items: center;
+  background-color: #0075e4;
   border: none;
   font-weight: bold;
   color: #fff;
@@ -185,11 +190,15 @@ section {
   outline: none;
 
   &:active, &:disabled {
-    background-color: darken(#0095ff, 5%);
+    background-color: darken(#0075e4, 5%);
     box-shadow: 
       inset 2px 2px 2px var(--shadow-color),
       inset 2px -2px 2px var(--shadow-color),
       inset -2px 2px 2px var(--shadow-color);
+  }
+
+  svg {
+    margin-left: 3px;
   }
 }
 
