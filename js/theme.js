@@ -22,13 +22,9 @@ const applyDarkTheme = () => {
   localStorage.setItem('theme', 'dark')
 }
 
-const applyDefaultTheme = () => {
-  if (localStorage.getItem('theme') === 'light') applyLightTheme()
-  else applyDarkTheme()
-}
 
 // Applies the theme inside localStorage, if there isn't one, applies dark theme
-applyDefaultTheme()
+localStorage.getItem('theme') === 'light' ? applyLightTheme() : applyDarkTheme()
 
 lightBtn.addEventListener('click', applyLightTheme)
 darkBtn.addEventListener('click', applyDarkTheme)
