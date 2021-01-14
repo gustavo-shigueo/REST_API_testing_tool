@@ -19,12 +19,9 @@ const createRequest = () => {
   const headers = document.querySelector('#reqHeaders').value
   const body = document.querySelector('#reqBody').value
 
-  const options = {
-    method
-  }
+  const options = { method }
 
   if (body) options.body = JSON.stringify(JSON.parse(body.replace(/(\,\s{0,}\n?\s{0,})(\}|\])/g, '$2')))
-  console.log(body)
 
   if (method === 'GET' || method === 'HEAD') delete options.body
 
