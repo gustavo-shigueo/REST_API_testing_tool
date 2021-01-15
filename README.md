@@ -1,5 +1,5 @@
-# http_requests
-## Test REST APIs
+# REST_API_testing_tool
+## Test your REST APIs by sending http requests
 
 This is a javascript application that uses the browser's Fetch API to send HTTP requests to your API.
 Request data must be sent as JSON!
