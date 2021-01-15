@@ -7,22 +7,18 @@ const cacheResources = async () => {
   return await cache.addAll(urlsToCache)
 }
 
-self.addEventListener('install', e => {
-  e.waitUntil(cacheResources())
-})
+self.addEventListener('install', e => e.waitUntil(cacheResources()))
 
 const cachedResource = async req => {
-  try {
-    await caches.match(req)
-    return await fetch(req)
-  } catch (error) {
-    return caches.match('css')
-  }
+  const cache = await caches.open(CACHE_NAME)
+  const cacheResponse = await cache.match(req)
+  if (cacheResponse) return cacheResponse
+  const networkResponse = await fetch(req)
+  cache.put(req, networkResponse.clone())
+  return networkResponse
 }
 
-self.addEventListener('fetch', e => {
-  e.respondWith(cachedResource(e.request))
-})
+self.addEventListener('fetch', e => e.respondWith(cachedResource(e.request)))
 
 const activateCache = async whiteList => {
   const names = await caches.keys()
