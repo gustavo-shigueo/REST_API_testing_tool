@@ -10,12 +10,15 @@
   <meta property="og:description" content="Send HTTP requests to test your REST APIs">
   <meta property="og:url" content="http://gustavo-shigueo.github.io/http_requests">
   <meta property="og:image" content="./assets/HTTP_logo.svg">
+  <meta name="theme-color" content="#252526">
 
   <link rel="stylesheet" href="./css/style.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="manifest" href="manifest.json">
   <script src="./js/theme.js" defer></script>
   <script src="./js/request.js" defer></script>
   <link rel="shortcut icon" href="./assets/HTTP_logo.svg" type="image/x-icon">
+  <link rel="apple-touch-icon" href="./assets/HTTP_logo.svg" type="image/x-icon">
   <title>HTTP Requests</title>
 </head>
 <body class="dark">
@@ -142,5 +145,15 @@
 
   </section>
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', async () => {
+        try {
+          const reg = await navigator.serviceWorker.register('./serviceWorker.js')
+          console.log('Success: ', reg.scope)
+        } catch (error) { console.error('Failure: ', error) }
+      })
+    }
+  </script>
 </body>
 </html>
