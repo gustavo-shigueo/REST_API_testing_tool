@@ -97,7 +97,7 @@ const sendReq = async e => {
     const response = { status, statusText, data, headers }
     return displayResponse(response)
   } catch (error) {
-    const message = `Your request failed!\n\n\tMake sure the host and the port are correct and your request's headers and body are complete.\n\n\tThis may also be due to the targeted server's CORS settings, open the console for more details and if that is the case, adjust your API's CORS restrictions to allow this application to send requests.\n\tThe following link may be helpful to solve problems related to CORS: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers`
+    const message = `Your request failed!\n\n\tMake sure the host and the port are correct and your request's headers and body are complete.\n\n\tIf you are making a request to a server not hosted in your localhost, make sure you have an internet connection.\n\n\tThis may also be due to the targeted server's CORS settings, open the console for more details and if that is the case, adjust your API's CORS restrictions to allow this application to send requests.\n\tThe following link may be helpful to solve problems related to CORS: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers`
     displayResponse({ status: 400, statusText: 'Bad Request', data: message, headers: '{}' })
     return console.error(error)
   }
