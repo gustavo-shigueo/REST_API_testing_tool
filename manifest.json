@@ -3,23 +3,23 @@
   "name": "REST API Testing",
   "icons": [
     {
-      "src": "/assets/HTTP_logo.png",
+      "src": "./assets/HTTP_logo.png",
       "type": "image/png",
       "sizes": "1024x548"
     },
     {
-      "src": "/assets/HTTP_logo.png",
+      "src": "./assets/HTTP_logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/assets/HTTP_logo.png",
+      "src": "./assets/HTTP_logo.png",
       "type": "image/png",
       "sizes": "512x512"
     },
     {
       "purpose": "maskable",
-      "src": "/assets/HTTP_logo.png"
+      "src": "./assets/HTTP_logo.png"
     }
   ],
   "start_url": "./index.html",
