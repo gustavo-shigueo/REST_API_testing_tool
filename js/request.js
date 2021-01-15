@@ -73,7 +73,7 @@ const formatML = ml => {
 const formatData = async (data, format) => {
   if (format.match(/(application\/json)/g)) return JSON.stringify(await data.json(), null, 2)
   if (format.match(/(application\/xml)|(text\/html)/g)) return formatML(await data.text())
-  return await data.text()
+  return data.text()
 }
 
 const sendReq = async e => {
