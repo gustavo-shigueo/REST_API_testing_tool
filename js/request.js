@@ -26,10 +26,9 @@ const createRequest = () => {
   if (method === 'GET' || method === 'HEAD') delete options.body
 
   if (headers) options.headers = JSON.parse(headers.replace(/(\,\s{0,}\n?\s{0,})(\}|\])/g, '$2'))
-  else options.headers = {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  }
+  else options.headers = { 'Accept': 'application/json' }
+
+  options.headers['Content-Type'] = 'application/json'
 
   return { url, options }
 }
